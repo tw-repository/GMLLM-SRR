@@ -74,7 +74,7 @@ Please refer to the "environment.txt".
                 }
     
 
-## Fine-tune Method
+## Fine-tuning command
     CUDA_VISIBLE_DEVICES=0 swift sft \
         --model_id_or_path /your_path/glm-4v-9b \
         --model_type glm4v-9b-chat \
