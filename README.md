@@ -27,12 +27,12 @@ Please refer to the "environment.txt".
 
 ## Fine-tune Method
     CUDA_VISIBLE_DEVICES=0 swift sft \
-        --model_id_or_path /mnt/disk/tw_data/glm-4v-9b \
+        --model_id_or_path /your_path/glm-4v-9b \
         --model_type glm4v-9b-chat \
-        --dataset /mnt/disk/tw_data/finetune_mllm/SRR_train1.json \
+        --dataset /your_path/SRR_train.json \
         --num_train_epochs 5 \
         --sft_type lora \
-        --output_dir /mnt/disk/tw_data/finetune_output \
+        --output_dir /your_path/finetune_output \
         --eval_steps 300 \
         --batch_size 1 \
         --max_length 2048 \
