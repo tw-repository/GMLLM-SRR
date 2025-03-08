@@ -26,28 +26,27 @@ Please refer to the "environment.txt".
       --result-path PATH        path for saving result (default: none)
 
 ## Fine-tune Method
-
-CUDA_VISIBLE_DEVICES=0 swift sft \
-    --model_id_or_path /mnt/disk/tw_data/glm-4v-9b \
-    --model_type glm4v-9b-chat \
-    --dataset /mnt/disk/tw_data/finetune_mllm/SRR_train1.json \
-    --num_train_epochs 5 \
-    --sft_type lora \
-    --output_dir /mnt/disk/tw_data/finetune_output \
-    --eval_steps 300 \
-    --batch_size 1 \
-    --max_length 2048 \
-    --lora_rank 8 \
-    --lora_alpha 32 \
-    --lora_dropout_p 0.05 \
-    --gradient_checkpointing true \
-    --weight_decay 0.1 \
-    --learning_rate 1e-4 \
-    --gradient_accumulation_steps $(expr 16 / 3) \
-    --max_grad_norm 0.5 \
-    --warmup_ratio 0.03 \
-    --save_steps 300 \
-    --save_total_limit 2
+    CUDA_VISIBLE_DEVICES=0 swift sft \
+        --model_id_or_path /mnt/disk/tw_data/glm-4v-9b \
+        --model_type glm4v-9b-chat \
+        --dataset /mnt/disk/tw_data/finetune_mllm/SRR_train1.json \
+        --num_train_epochs 5 \
+        --sft_type lora \
+        --output_dir /mnt/disk/tw_data/finetune_output \
+        --eval_steps 300 \
+        --batch_size 1 \
+        --max_length 2048 \
+        --lora_rank 8 \
+        --lora_alpha 32 \
+        --lora_dropout_p 0.05 \
+        --gradient_checkpointing true \
+        --weight_decay 0.1 \
+        --learning_rate 1e-4 \
+        --gradient_accumulation_steps $(expr 16 / 3) \
+        --max_grad_norm 0.5 \
+        --warmup_ratio 0.03 \
+        --save_steps 300 \
+        --save_total_limit 2
 
 
 ## Contributing
