@@ -25,6 +25,55 @@ Please refer to the "environment.txt".
       --crop-size CROP_SIZE     crop size
       --result-path PATH        path for saving result (default: none)
 
+## Prompt templates
+    def fine_grained_generation(image_path, content1, content2):
+    return {
+              "messages": [
+                {
+                  "role": "user",
+                  "content": "How many different kinds of fine-grained social relationships are in the image?",
+                  "image": f"{image_path}"
+                },
+                {
+                  "role": "assistant",
+                  "content": f"{content1}"
+                },
+                {
+                  "role": "user",
+                  "content": "What is the fine-grained social relationship between each person in the image?"
+                },
+                {
+                  "role": "assistant",
+                  "content": f"{content2}"
+                }
+              ]
+            }
+
+
+    def coarse_grained_generation(image_path, content1, content2):
+        return {
+                  "messages": [
+                    {
+                      "role": "user",
+                      "content": "How many different kinds of coarse-grained social relationships are in the image?",
+                      "image": f"{image_path}"
+                    },
+                    {
+                      "role": "assistant",
+                      "content": f"{content1}"
+                    },
+                    {
+                      "role": "user",
+                      "content": "What is the coarse-grained social relationship between each person in the image?"
+                    },
+                    {
+                      "role": "assistant",
+                      "content": f"{content2}"
+                    }
+                  ]
+                }
+    
+
 ## Fine-tune Method
     CUDA_VISIBLE_DEVICES=0 swift sft \
         --model_id_or_path /your_path/glm-4v-9b \
