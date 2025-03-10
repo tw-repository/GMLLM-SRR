@@ -274,7 +274,7 @@ def train(train_loader, test_loader, model, criterion, optimizer):
         losses.reset()
         print("epoch {}\ttotal_loss {:.4f}".format(i, total_losses.avg))
 
-        prec, mAP, recall = validate(test_loader, model)
+        prec, recall = validate(test_loader, model)
 
         if best_prec < prec:
             best_prec = prec
